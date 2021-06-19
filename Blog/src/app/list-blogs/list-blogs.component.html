@@ -1,0 +1,27 @@
+<div id="SearchBlock">
+    <label for="SearchInp">Enter name blog for search</label>
+    <label>{{ErrorSearch}}</label>
+    <br/>
+    <input type="text" placeholder="name"/>
+    <!--<input type="text" [(ngModel)]="selectedItem" placeholder="name"/>-->
+    <button (click)="SearchBlog()">Seacrh</button>
+</div>
+<ul class="BlogList">
+    <li *ngFor="let blog of ListBlogs" class="Blogitem" >  
+        <p>{{blog.name}}</p> 
+        <div id="EmojiBlock">        
+            <div>
+                <p>📆 {{blog.date | date}}</p>
+            </div> 
+            <div>
+                <p>✎ {{blog.author}}</p>  
+            </div>
+            <div>
+                <p>💬 {{blog.countComents}}</p>  
+             </div>        
+        </div>     
+       <img class="ImgBlogs"/>
+       <p>{{blog.text | slice: 0: 10}}</p>
+       <button>Reade More</button>
+    </li>
+</ul>
