@@ -1,0 +1,13 @@
+a{
+    display : inline-block;
+    border: 1px solid blue;
+    background-color: cornflowerblue;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+}
+
+a.active{
+    background-color: slateblue;
+}

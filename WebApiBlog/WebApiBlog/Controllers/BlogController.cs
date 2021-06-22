@@ -42,19 +42,18 @@ namespace WebApiBlog.Controllers
             db.SaveChanges();
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Blog>>> Get()
-        {
-            return await db.Blogs.ToListAsync();
-        }
-
-        [HttpGet("{nameBlog}")]
+        [HttpGet("{nameBlog=null}")]
         public async Task<ActionResult<IEnumerable<Blog>>> Get(string nameBlog)
         {
-            var resBlogs = db.Blogs.
-                             Where(blog => blog.Name.IndexOf(nameBlog) > -1);
-           
-            return await resBlogs.ToListAsync();
+            if (nameBlog == "null")
+            {
+                return await db.Blogs.ToListAsync();
+            }
+            else 
+            {
+                return await db.Blogs.
+                             Where(blog => blog.Name.IndexOf(nameBlog) > -1).ToListAsync();
+            }
         }
     }
 }

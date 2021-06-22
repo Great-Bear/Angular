@@ -1,11 +1,4 @@
-<div id="SearchBlock">
-    <label for="SearchInp">Enter name blog for search</label>
-    <label>{{ErrorSearch}}</label>
-    <br/>
-    <input type="text" placeholder="name"/>
-    <!--<input type="text" [(ngModel)]="selectedItem" placeholder="name"/>-->
-    <button (click)="SearchBlog()">Seacrh</button>
-</div>
+<app-search-blog (onChanged)="onChanged($event)"></app-search-blog>
 <ul class="BlogList">
     <li *ngFor="let blog of ListBlogs" class="Blogitem" >  
         <p>{{blog.name}}</p> 
@@ -22,6 +15,7 @@
         </div>     
        <img class="ImgBlogs"/>
        <p>{{blog.text | slice: 0: 10}}</p>
-       <button>Reade More</button>
+       <button><a [routerLink]="['Blog', '{blog.name}']">Reade More</a></button>
     </li>
 </ul>
+<router-outlet></router-outlet>
