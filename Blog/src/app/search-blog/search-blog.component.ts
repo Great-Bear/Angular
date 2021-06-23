@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-search-blog',
@@ -16,13 +17,13 @@ export class SearchBlogComponent implements OnInit {
     this.onChanged.emit(increased);
   }
   
-  constructor() 
+  constructor(private httpService: HeroService) 
   {
-    this.ShowAllBlogs();  
+  
   }
 
   ShowAllBlogs(){
-    this.SearchBlog("null");  
+    this.httpService.getData().subscribe((data : any) => this.change(data)); 
   }
 
   SearchBlog(nameBlog? : string){
@@ -34,18 +35,10 @@ export class SearchBlogComponent implements OnInit {
         if(nameBlog == undefined){
           nameBlog = this.valueSearch;
         }           
-        fetch(`https://localhost:44346/Blog/${nameBlog}`)
-        .then(res => res.json())
-        .then(
-          data => {           
-            this.change(data);    
-          },
-          error => {
-            alert("Error Server");
-          }
-        )
+        this.httpService.getData(nameBlog).subscribe((data : any) => this.change(data)); 
       }
     }
   ngOnInit(): void {
+    this.ShowAllBlogs();
   }
 }

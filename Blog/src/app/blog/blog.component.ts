@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { HeroService } from '../hero.service';
+import { BlogObj } from '../models/Blogobj';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -7,21 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  Date: number | undefined;
-  CountComments: number | undefined;
-  Author: string | undefined;
-  Text: string | undefined;
+  Img : string | undefined;
+  BlogObj : BlogObj = new BlogObj();
 
-  constructor() 
+  constructor( private activateRoute: ActivatedRoute,
+               private router: Router,
+               private httpService: HeroService) 
   {
-    this.Date = Date.now();
-    this.Author = "Wikipedia";
-    this.CountComments = 3;
-    this.Text = "Penguins (order Sphenisciformes /sfɪˈnɪsɪfɔːrmiːz/, family Spheniscidae /sfɪˈnɪsɪdiː/) are a group of aquatic flightless birds. They live almost exclusively in the Southern Hemisphere, with only one species, the Galápagos penguin, found north of the Equator. Highly adapted for life in the water, penguins have countershaded dark and white plumage and flippers for swimming. Most penguins feed on krill, fish, squid and other forms of sea life which they catch while swimming underwater. They spend roughly half of their lives on land and the other half in the sea.Although almost all penguin species are native to the Southern Hemisphere, they are not found only in cold climates, such as Antarctica. In fact, only a few species of penguin live so far south. Several species are found in the temperate zone, but one species, the Galápagos penguin, lives near the Equator.The largest living species is the emperor penguin (Aptenodytes forsteri):[4] on average, adults are about 1.1 m (3 ft 7 in) tall and weigh 35 kg (77 lb). The smallest penguin species is the little blue penguin (Eudyptula minor), also known as the fairy penguin, which stands around 33 cm (13 in) tall and weighs 1 kg (2.2 lb).[5] Among extant penguins, larger penguins inhabit colder regions, while smaller penguins are generally found in temperate or even tropical climates. Some prehistoric species attained enormous sizes, becoming as tall or as heavy as an adult human. These were not restricted to Antarctic regions; on the contrary, subantarctic regions harboured high diversity, and at least one giant penguin occurred in a region around 2,000 km south of the Equator 35 mya, in a climate decidedly warmer than today.[which?]Penguins (order Sphenisciformes /sfɪˈnɪsɪfɔːrmiːz/, family Spheniscidae /sfɪˈnɪsɪdiː/) are a group of aquatic flightless birds. They live almost exclusively in the Southern Hemisphere, with only one species, the Galápagos penguin, found north of the Equator. Highly adapted for life in the water, penguins have countershaded dark and white plumage and flippers for swimming. Most penguins feed on krill, fish, squid and other forms of sea life which they catch while swimming underwater. They spend roughly half of their lives on land and the other half in the sea.Although almost all penguin species are native to the Southern Hemisphere, they are not found only in cold climates, such as Antarctica. In fact, only a few species of penguin live so far south. Several species are found in the temperate zone, but one species, the Galápagos penguin, lives near the Equator.The largest living species is the emperor penguin (Aptenodytes forsteri):[4] on average, adults are about 1.1 m (3 ft 7 in) tall and weigh 35 kg (77 lb). The smallest penguin species is the little blue penguin (Eudyptula minor), also known as the fairy penguin, which stands around 33 cm (13 in) tall and weighs 1 kg (2.2 lb).[5] Among extant penguins, larger penguins inhabit colder regions, while smaller penguins are generally found in temperate or even tropical climates. Some prehistoric species attained enormous sizes, becoming as tall or as heavy as an adult human. These were not restricted to Antarctic regions; on the contrary, subantarctic regions harboured high diversity, and at least one giant penguin occurred in a region around 2,000 km south of the Equator 35 mya, in a climate decidedly warmer than today.[which?] "
+    activateRoute.params.subscribe(params => this.BlogObj.name = params['name']);
   }
   
 
   ngOnInit(): void {
+    if(this.BlogObj.name == ":name"){
+      this.router.navigate(['ListBlogs']);
+    }
+    else{
+        this.httpService.getData(this.BlogObj.name).subscribe((blogs : any) => this.BlogObj = blogs[0]);
+        this.Img = "assets/Imgs/Penguins.png";
+    }
   }
-
 }

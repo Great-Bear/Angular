@@ -1,18 +1,20 @@
 <div id="Blog">
-    <h1>Name Blog</h1>
+    <h1>{{BlogObj.name}}</h1>
     <div id="EmojiBlock">
         <div>
-            <p>📆 {{Date | date}}</p> 
+            <p>📆 {{BlogObj.date | date}}</p> 
         </div> 
         <div>
-            <p>✎ {{Author}}</p>  
+            <p>✎ {{BlogObj.author}}</p>  
         </div>
         <div>
-            <p>💬 {{CountComments}}</p>  
-         </div>        
+            <p>💬 {{BlogObj.countComents}}</p>  
+         </div>     
     </div>  
-    <img id="MainPicture" src="assets/Imgs/Penguins.png"/> 
-    <p id="ContectText">{{Text}}</p>
+    <div id="ContentBlock">
+        <img id="MainPicture" src="{{Img}}"/>    
+        <p id="ContectText">{{BlogObj.text}}</p>
+    </div>
 </div>
 
 

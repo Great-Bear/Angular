@@ -21,7 +21,7 @@ namespace WebApiBlog
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string con = "Server=(local);Database=BlogDB2;Trusted_Connection=True;MultipleActiveResultSets=true";
+            string con = "Server=(local);Database=BlogDB5;Trusted_Connection=True;MultipleActiveResultSets=true";
 
             services.AddDbContext<BlogContext>(options => options.UseSqlServer(con));
             services.AddControllers();

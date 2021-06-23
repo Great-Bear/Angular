@@ -14,8 +14,8 @@
              </div>        
         </div>     
        <img class="ImgBlogs"/>
-       <p>{{blog.text | slice: 0: 10}}</p>
-       <button><a [routerLink]="['Blog', '{blog.name}']">Reade More</a></button>
+       <p>{{blog.text | slice: 0: 100}}</p>
+       <button><a [routerLink]="['Blog', blog.name]">Reade More</a></button>
     </li>
 </ul>
 <router-outlet></router-outlet>
