@@ -1,7 +1,7 @@
 <app-search-blog (onChanged)="onChanged($event)"></app-search-blog>
 <ul class="BlogList">
     <li *ngFor="let blog of ListBlogs" class="Blogitem" >  
-        <p>{{blog.name}}</p> 
+        <a [routerLink]="['Blog', blog.name]"><p>{{blog.name}}</p></a>
         <div id="EmojiBlock">        
             <div>
                 <p>📆 {{blog.date | date}}</p>

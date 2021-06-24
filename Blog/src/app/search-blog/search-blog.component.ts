@@ -9,7 +9,7 @@ import { HeroService } from '../hero.service';
 export class SearchBlogComponent implements OnInit {
 
   ErrorSearch: string | undefined;
-  valueSearch : string | undefined;
+  valueSearch : string = "";
   ListBlogs : any; 
 
   @Output() onChanged = new EventEmitter<any>();
@@ -19,7 +19,6 @@ export class SearchBlogComponent implements OnInit {
   
   constructor(private httpService: HeroService) 
   {
-  
   }
 
   ShowAllBlogs(){
@@ -28,7 +27,7 @@ export class SearchBlogComponent implements OnInit {
 
   SearchBlog(nameBlog? : string){
     this.ErrorSearch = "";
-      if(this.valueSearch == undefined && nameBlog == undefined){
+      if(this.valueSearch.length == 0 && nameBlog == undefined){
         this.ErrorSearch = "value can`t be empty";
       }
       else{

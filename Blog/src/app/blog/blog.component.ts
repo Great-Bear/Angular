@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroService } from '../hero.service';
-import { BlogObj } from '../models/Blogobj';
+import { BlogObj } from '../models/BlogObj';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',

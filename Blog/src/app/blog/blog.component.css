@@ -14,6 +14,7 @@
 #MainPicture
 {
     width: 400px;
+    height: 275;
     float: left;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -21,4 +22,8 @@
 #ContectText
 {
     margin-top: 0px;
+}
+#ContentBlock
+{
+    min-height: 275px;
 }

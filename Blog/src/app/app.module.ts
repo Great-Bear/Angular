@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { SearchBlogComponent } from './search-blog/search-blog.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SearchBlogComponent } from './search-blog/search-blog.component';
     FooterComponent,
     ListBlogsComponent,
     SearchBlogComponent,
-    NavComponent
+    NavComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
