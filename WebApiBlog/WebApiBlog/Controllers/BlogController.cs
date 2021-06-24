@@ -58,7 +58,7 @@ namespace WebApiBlog.Controllers
         [HttpGet("{fileName}/{id}")]
         public FileResult GetFile(string fileName)
         {
-            byte[] mas = System.IO.File.ReadAllBytes(@"C:\Users\Groh_8npy\Desktop\Angular\WebApiBlog\WebApiBlog\Img\Penguins.png");
+            byte[] mas = System.IO.File.ReadAllBytes(@"D:\HM\Angular\Blog\WebApiBlog\WebApiBlog\Img\Penguins.png");
             string file_type = "application/png";
             string file_name = "book2.png";
             return File(mas, file_type, file_name);

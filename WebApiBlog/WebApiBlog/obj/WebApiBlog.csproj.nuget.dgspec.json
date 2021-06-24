@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Groh_8npy\\Desktop\\Angular\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {}
+    "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Groh_8npy\\Desktop\\Angular\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {
+    "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Groh_8npy\\Desktop\\Angular\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+        "projectUniqueName": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
         "projectName": "WebApiBlog",
-        "projectPath": "C:\\Users\\Groh_8npy\\Desktop\\Angular\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
-        "packagesPath": "C:\\Users\\Groh_8npy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Groh_8npy\\Desktop\\Angular\\WebApiBlog\\WebApiBlog\\obj\\",
+        "projectPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+        "packagesPath": "C:\\Users\\Bogdan\\.nuget\\packages\\",
+        "outputPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Groh_8npy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Bogdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
