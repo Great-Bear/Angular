@@ -5,4 +5,5 @@ export class BlogObj{
     author: string | undefined;
     text: string | undefined;
     name: string | undefined;
+    namePicture: string | undefined;
 }

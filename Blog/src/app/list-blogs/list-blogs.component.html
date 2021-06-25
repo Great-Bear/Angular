@@ -1,4 +1,4 @@
-<app-search-blog (onChanged)="onChanged($event)"></app-search-blog>
+<app-search-blog (onChanged)="onChanged($event)" (onChangedImg)="onChangedImg($event)"></app-search-blog>
 <ul class="BlogList">
     <li *ngFor="let blog of ListBlogs" class="Blogitem" >  
         <a [routerLink]="['Blog', blog.name]"><p>{{blog.name}}</p></a>
@@ -13,7 +13,7 @@
                 <p>💬 {{blog.countComents}}</p>  
              </div>        
         </div>     
-       <img class="ImgBlogs"/>
+       <img class="ImgBlogs" [src]="ImgsBlogs.get(blog.id)"/>
        <p>{{blog.text | slice: 0: 100}}</p>
        <button><a [routerLink]="['Blog', blog.name]">Reade More</a></button>
     </li>

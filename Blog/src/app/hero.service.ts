@@ -15,24 +15,26 @@ export class HeroService {
   getData(nameBlog : string = ""){
     return this.http.get(`https://localhost:44346/Blog/${nameBlog}`)
   }
-  getPicture () : Observable<SafeResourceUrl>{
-   // return this.http.get(`https://localhost:44346/Blog/fileName/2`,{ responseType: 'blob' })
+  getPicture (namePicture : string) {
+    return this.http.get(`https://localhost:44346/Blog/${namePicture}/2`,{ responseType: 'blob' })
+
+  /* let q = new Observable<SafeResourceUrl>();
+
   let pictureArrBuff = this.http.get(`https://localhost:44346/Blog/fileName/2`,{ responseType: 'blob' }).
   toPromise().then
     (
     data => {
-      const urlToBlob = window.URL.createObjectURL(pictureArrBuff)   
+      console.log("ok")
+      const urlToBlob = window.URL.createObjectURL(data)   
       let u = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);     
       let a = new Observable<SafeResourceUrl>(subscrime => subscrime.next(u)) ;
-      return a;
+      q = a;
     },
     error => {
       console.log('Error: ', error);
-    });
-
-  }
-  getPicture2(){
-    return this.http.get(`https://localhost:44346/Blog/fileName/2`,{ responseType: 'blob' })
+    }).then();
+       
+    }  */ 
   }
 
 }

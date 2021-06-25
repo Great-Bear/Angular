@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { NgModel} from '@angular/forms';
+import { SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-list-blogs',
   templateUrl: './list-blogs.component.html',
@@ -10,15 +11,22 @@ import { NgModel} from '@angular/forms';
 export class ListBlogsComponent implements OnInit {
 
  ListBlogs : any;
-  onChanged(blogs:any){
+ ImgsBlogs : Map<number, SafeResourceUrl> = new Map<number, SafeResourceUrl>();
+
+  onChanged(blogs: any){
     this.ListBlogs = blogs;
+  }
+
+  onChangedImg(imgBlogs : any){
+    this.ImgsBlogs = imgBlogs;
   }
 
   constructor() 
   {   
+    
   }
   ngOnInit(): void {
-  
+   
   }
 
 }

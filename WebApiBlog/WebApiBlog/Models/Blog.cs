@@ -13,5 +13,6 @@ namespace WebApiBlog.Models
         public string Author { get; set; }
         public ushort CountComents { get; set; }
         public string Text { get; set; }
+        public string NamePicture { get; set; }
     }
 }
