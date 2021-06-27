@@ -60,13 +60,15 @@ namespace WebApiBlog.Controllers
         [HttpGet("{fileName}/{id}")]
         public FileResult GetFile(string fileName, int id)
         {
-            foreach (var item in Directory.GetFiles(@"D:\HM\Angular\Blog\WebApiBlog\WebApiBlog\Img\"))
+            foreach (var item in Directory.GetFiles(@".\Img\"))
             {
                 if (item.IndexOf(fileName) > 0)
                 {
-                    byte[] mas = System.IO.File.ReadAllBytes($@"D:\HM\Angular\Blog\WebApiBlog\WebApiBlog\Img\{fileName}");
-                    string file_type = "application/jpg";
-                    string file_name = "book2.png";
+                    int startCut = item.LastIndexOf('.') + 1;
+                    string expansion = item.Substring(startCut, item.Length - startCut);
+                    byte[] mas = System.IO.File.ReadAllBytes($@".\Img\{fileName}");
+                    string file_type = $"application/{expansion}";
+                    string file_name = $"img.{expansion}";
                     return File(mas, file_type, file_name);
                 }
             }

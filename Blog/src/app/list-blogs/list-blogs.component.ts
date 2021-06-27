@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { NgModel} from '@angular/forms';
 import { SafeResourceUrl } from '@angular/platform-browser';
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-list-blogs',
   templateUrl: './list-blogs.component.html',

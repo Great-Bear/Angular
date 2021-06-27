@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { RoutingModule } from './routing.module';
 import { NavComponent } from './nav/nav.component';
 import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { SingInComponent } from './sing-in/sing-in.component';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { SearchBlogComponent } from './search-blog/search-blog.component';
-import { AboutComponent } from './about/about.component';
-
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     ListBlogsComponent,
     SearchBlogComponent,
     NavComponent,
-    AboutComponent
+    AboutComponent,
+    SingInComponent
   ],
   imports: [
     BrowserModule,
