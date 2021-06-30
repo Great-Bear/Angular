@@ -28,14 +28,6 @@ export class SearchBlogComponent implements OnInit {
   }
 
   ShowAllBlogs(){
-   // this.httpService.getData().subscribe((data : any) => this.change(data)); 
-  
-  /* this.httpService.getData().toPromise().then(
-     data =>{
-      this.change(data)
-      this.LoadImgs(data);
-     }
-   )*/
    this.httpService.getData().subscribe((data : any) =>{
      this.change(data);
      this.LoadImgs(data);
@@ -43,17 +35,17 @@ export class SearchBlogComponent implements OnInit {
   }
 
   LoadImgs(listBlogs : any){
-    let TestMap = new Map<number, SafeResourceUrl>();
+    let Imgs = new Map<number, SafeResourceUrl>();
     for (let index = 0; index < listBlogs.length; index++) {
       this.httpService.getPicture(listBlogs[index].namePicture).toPromise().then(
         data => {
           const urlToBlob = window.URL.createObjectURL(data)   
           let urlP =  this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);          
-          TestMap.set(listBlogs[index].id, urlP);
+          Imgs.set(listBlogs[index].id, urlP);
         }
       )    
     } 
-    this.ChangedImg(TestMap);
+    this.ChangedImg(Imgs);
   }
 
   SearchBlog(nameBlog? : string){

@@ -24,7 +24,7 @@ import { SearchBlogComponent } from './search-blog/search-blog.component';
     SearchBlogComponent,
     NavComponent,
     AboutComponent,
-    SingInComponent
+    SingInComponent,
   ],
   imports: [
     BrowserModule,
