@@ -12,6 +12,16 @@ export class HeroService {
 
   constructor(private http: HttpClient,private sanitizer: DomSanitizer){ }
       
+  SingIn(login: string, password: string){
+
+    let body = {
+      login:"TestLogin",
+      password: "TestPassword"
+    }
+    return this.http.post("https://localhost:44346/Blog/",body);
+    
+  }
+
   getData(nameBlog : string = ""){
     return this.http.get(`https://localhost:44346/Blog/${nameBlog}`)
   }

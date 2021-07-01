@@ -9,6 +9,7 @@ namespace WebApiBlog.Models
     public class BlogContext : DbContext
     {
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Author> Authors { get; set; }
         public BlogContext(DbContextOptions<BlogContext> options)
             : base(options)
         {
