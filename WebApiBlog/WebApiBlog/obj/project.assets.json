@@ -7345,11 +7345,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+      "projectUniqueName": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
       "projectName": "WebApiBlog",
-      "projectPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+      "projectPath": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
       "packagesPath": "C:\\Users\\Bogdan\\.nuget\\packages\\",
-      "outputPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\obj\\",
+      "outputPath": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bogdan\\AppData\\Roaming\\NuGet\\NuGet.Config",

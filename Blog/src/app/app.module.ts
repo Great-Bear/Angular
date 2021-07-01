@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { SearchBlogComponent } from './search-blog/search-blog.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SingOutComponent } from './sing-out/sing-out.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SearchBlogComponent } from './search-blog/search-blog.component';
     SearchBlogComponent,
     NavComponent,
     AboutComponent,
-    SingInComponent
+    SingInComponent,
+    HomePageComponent,
+    SingOutComponent,
   ],
   imports: [
     BrowserModule,

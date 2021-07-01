@@ -24,11 +24,15 @@ namespace WebApiBlog.Controllers
             {
                 db.Authors.Add(new Author
                 {
-                    Name = "Bob"
+                    Name = "Bob",
+                    Login = "1",
+                    Password = "A6xnQhbz4Vx2HuGl4lXwZ5U2I8iziLRFnhP5eNfIRvQ="
                 });
                 db.Authors.Add(new Author
                 {
-                    Name = "Stiv"
+                    Name = "Stiv",
+                    Login = "2",
+                    Password = "A6xnQhbz4Vx2HuGl4lXwZ5U2I8iziLRFnhP5eNfIRvQ="
                 });
                 db.Blogs.Add(new Blog
                 {
@@ -82,15 +86,22 @@ namespace WebApiBlog.Controllers
             }
             return null;
         }
-        [HttpPost("{login}/{password}")]
-        public string SingIn(string login, string password)
+        [HttpPost]
+        public ActionResult<object> SingIn(Auth auth)
         {
-            return "work";
-            /*
-            return db.Authors
-                           .Where(author => author.Login == login && author.Password == password)
-                           .FirstOrDefault();*/
+            var sha256 = new SHA256Managed();
+            var passwordHash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(auth.Password)));
+
+            var resAuthor = db.Authors
+                           .Where(author => author.Login == auth.Login && author.Password == passwordHash)
+                           .FirstOrDefault();
+
+            return new { Author = resAuthor.Name }; 
         }
-       
+
     }
+}
+public class Auth{
+    public string Login { get; set; }
+    public string Password { get; set; }
 }

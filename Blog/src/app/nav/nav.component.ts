@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserDataSevice } from '../user-data-sevice.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  isAutorizeUser : boolean | undefined;
+
+  constructor(private userDataService : UserDataSevice)
+  {
+      userDataService.Author.subscribe((name : String) => this.isAutorizeUser = (Boolean)(name))
+      this.isAutorizeUser = (Boolean)(userDataService.Author.getValue());
+  }
 
   ngOnInit(): void {
   }
