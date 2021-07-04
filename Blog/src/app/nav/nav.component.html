@@ -5,6 +5,6 @@
         <a routerLink='SingIn' *ngIf="!isAutorizeUser; else elseBlock" routerLinkActive='active'>Sing In</a>
         <ng-template #elseBlock><a routerLink='SingOut' routerLinkActive='active'>Sing Out</a></ng-template>
         <a *ngIf="isAutorizeUser" routerLink='HomePage' routerLinkActive='active' >Home page</a>
-
+        <a *ngIf="isAutorizeUser" routerLink='AddBlog' routerLinkActive='active'>Add new blog</a>
     </nav>
 </div>

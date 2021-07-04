@@ -21,7 +21,7 @@ export class HeroService {
   }
 
   getData(nameBlog : string = ""){
-    return this.http.get(`https://localhost:44346/Blog/${nameBlog}`)
+    return this.http.get(`https://localhost:44346/Blog/${nameBlog}`, {responseType: 'json'})
   }
   getPicture (namePicture : string) {
     return this.http.get(`https://localhost:44346/Blog/${namePicture}/2`,{ responseType: 'blob' })

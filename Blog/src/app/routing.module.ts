@@ -5,6 +5,7 @@ import { SingInComponent } from './sing-in/sing-in.component';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SingOutComponent } from './sing-out/sing-out.component';
+import { NewBlogComponent } from './new-blog/new-blog.component';
 
 const routes: Routes = [
   { path: 'ListBlogs/Blog/:name', component: BlogComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'ListBlogs', component: ListBlogsComponent },
   { path: 'SingIn', component: SingInComponent },
   { path: 'HomePage', component: HomePageComponent },
-  { path: 'SingOut', component: SingOutComponent}
+  { path: 'SingOut', component: SingOutComponent },
+  { path: 'AddBlog', component: NewBlogComponent}
 ];
 
 @NgModule({

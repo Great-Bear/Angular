@@ -17,7 +17,7 @@ export class SingInComponent implements OnInit {
               private router: Router,) { }
 
   SingIn(){
-      this.heroService.SingIn("1","1234").subscribe((res : any) => this.userDataService.Author.next(res.author) )
+      this.heroService.SingIn("1","1234").subscribe((res : any) => this.userDataService.Author.next(res.author))
                                                       //Почему если any всё работает а если object нет
       this.router.navigate(['HomePage']);
   }

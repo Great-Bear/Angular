@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {}
+    "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {
+    "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+        "projectUniqueName": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
         "projectName": "WebApiBlog",
-        "projectPath": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+        "projectPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
         "packagesPath": "C:\\Users\\Bogdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\obj\\",
+        "outputPath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bogdan\\AppData\\Roaming\\NuGet\\NuGet.Config",

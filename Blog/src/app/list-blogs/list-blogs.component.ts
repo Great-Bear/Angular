@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { NgModel} from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserDataSevice } from '../user-data-sevice.service';
 import { SafeResourceUrl } from '@angular/platform-browser';
-import { Input } from '@angular/core';
+import { newArray } from '@angular/compiler/src/util';
+
 @Component({
   selector: 'app-list-blogs',
   templateUrl: './list-blogs.component.html',
@@ -16,15 +17,44 @@ export class ListBlogsComponent implements OnInit {
 
   onChanged(blogs: any){
     this.ListBlogs = blogs;
+
+    let newArray = new Array();
+    if(this.ListBlogs instanceof Array){   
+      for(let i = 0; i < this.ListBlogs.length; i++){
+        console.log(this.userDataSevice.Author.getValue())
+        if(this.ListBlogs[i].authorName == this.userDataSevice.Author.getValue()){
+            newArray.push(this.ListBlogs[i]);
+          this.ListBlogs = newArray;
+        }
+      }
+    }
   }
 
   onChangedImg(imgBlogs : any){
     this.ImgsBlogs = imgBlogs;
   }
 
-  constructor() 
+  isHomePage : Boolean = false;
+
+  constructor(private router : Router,
+              private userDataSevice : UserDataSevice) 
   {   
-    
+   this.isHomePage = (Boolean)(this.router.url.includes("HomePage"));
+   userDataSevice.Author.subscribe(()=>{
+
+    let newArray = new Array();
+    if(this.ListBlogs instanceof Array){   
+      for(let i = 0; i < this.ListBlogs.length; i++){
+        console.log(this.userDataSevice.Author.getValue())
+        if(this.ListBlogs[i].authorName == this.userDataSevice.Author.getValue()){
+            newArray.push(this.ListBlogs[i]);
+          this.ListBlogs = newArray;
+        }
+      }
+    }
+
+
+   })
   }
   ngOnInit(): void {
    

@@ -7,10 +7,13 @@
                 <p>📆 {{blog.date | date}}</p>
             </div> 
             <div>
-                <p>✎ {{blog.author}}</p>  
+                <p>✎ {{blog.authorName}}</p>  
             </div>
             <div>
                 <p>💬 {{blog.countComents}}</p>  
+             </div>
+             <div *ngIf="isHomePage">
+                 <p>Edit</p>
              </div>        
         </div>     
        <img class="ImgBlogs" [src]="ImgsBlogs.get(blog.id)"/>

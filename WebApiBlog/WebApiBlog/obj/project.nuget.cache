@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/0BRgF4FFTRXx9OaSytUiTJP0K8mogSQGmuq4sDyIcCpe8SLYyWSB5OUVLOW7XRCWGjpA/bJGhqeAnW7l5VicA==",
+  "dgSpecHash": "yJ9xq5Z+0Gh9f+RETZtSzutxV0VNXxR8hafaeQYIhpl+h0aMzCxXWQfdiVntRDhGEY/8K8DWRhZodJbh0b9Qqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bogdan\\Desktop\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
+  "projectFilePath": "D:\\HM\\Angular\\Blog\\WebApiBlog\\WebApiBlog\\WebApiBlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bogdan\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\Bogdan\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
