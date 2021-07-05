@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { SearchBlogComponent } from './search-blog/search-blog.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SingOutComponent } from './sing-out/sing-out.component';
+import { NewBlogComponent } from './new-blog/new-blog.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { SearchBlogComponent } from './search-blog/search-blog.component';
     NavComponent,
     AboutComponent,
     SingInComponent,
+    HomePageComponent,
+    SingOutComponent,
+    NewBlogComponent,
   ],
   imports: [
     BrowserModule,

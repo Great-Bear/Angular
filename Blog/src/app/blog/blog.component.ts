@@ -5,8 +5,7 @@ import { BlogObj } from '../models/BlogObj';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SafeResourceUrl } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',

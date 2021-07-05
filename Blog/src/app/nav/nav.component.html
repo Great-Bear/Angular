@@ -2,6 +2,9 @@
     <nav>
         <a routerLink='Blog/:name' routerLinkActive='active'>Blog</a>
         <a routerLink='ListBlogs' routerLinkActive='active'>List Blogs</a>
-        <a routerLink='SingIn' routerLinkActive='active'>Sing In</a>
+        <a routerLink='SingIn' *ngIf="!isAutorizeUser; else elseBlock" routerLinkActive='active'>Sing In</a>
+        <ng-template #elseBlock><a routerLink='SingOut' routerLinkActive='active'>Sing Out</a></ng-template>
+        <a *ngIf="isAutorizeUser" routerLink='HomePage' routerLinkActive='active' >Home page</a>
+        <a *ngIf="isAutorizeUser" routerLink='AddBlog' routerLinkActive='active'>Add new blog</a>
     </nav>
 </div>
