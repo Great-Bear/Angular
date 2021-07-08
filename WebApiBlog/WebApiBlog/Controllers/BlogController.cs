@@ -98,7 +98,10 @@ namespace WebApiBlog.Controllers
             var resAuthor = db.Authors
                            .Where(author => author.Login == auth.Login && author.Password == passwordHash)
                            .FirstOrDefault();
-
+            if(resAuthor == null)
+            {
+                return null;
+            }
             return new { ID = resAuthor.Id ,Author = resAuthor.Name }; 
         }
 

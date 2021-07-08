@@ -1,7 +1,7 @@
 <app-search-blog (onChanged)="onChanged($event)" (onChangedImg)="onChangedImg($event)"></app-search-blog>
 <ul class="BlogList">
     <li *ngFor="let blog of ListBlogs" class="Blogitem" >  
-        <a [routerLink]="['Blog', blog.name]"><p>{{blog.name}}</p></a>
+        <a [routerLink]="['Blog', blog.name]" routerLinkActive='active'><p>{{blog.name}}</p></a>
         <div id="EmojiBlock">        
             <div>
                 <p>📆 {{blog.date | date}}</p>
@@ -13,11 +13,14 @@
                 <p>💬 {{blog.countComents}}</p>  
              </div>
              <div *ngIf="isHomePage">
-                 <p>Edit</p>
+                <p> ✎<a [routerLink]="['EditBlog', blog.authorName,blog.id]">Edit</a></p>
              </div>        
+             <div *ngIf="isHomePage">
+                <p> ✖<a [routerLink]="['Delete/Blog', blog.name]">Delete</a></p>
+             </div>
         </div>     
        <img class="ImgBlogs" [src]="ImgsBlogs.get(blog.id)"/>
        <p>{{blog.text | slice: 0: 100}}</p>
-       <button><a [routerLink]="['Blog', blog.name]">Reade More</a></button>
+       <button><a [routerLink]="['Blog', blog.name]" routerLinkActive='active'>Reade More</a></button>
     </li>
 </ul>

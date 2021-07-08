@@ -10,16 +10,36 @@ import { Router } from '@angular/router';
 })
 export class SingInComponent implements OnInit {
 
-  valueAction: string  = "Sing In"; //если тут не будет этой инициализации то текста в кнопне не будет
-
   constructor(private heroService: HeroService,
               private userDataService : UserDataSevice,
               private router: Router,) { }
 
+  Login: string = "";
+  Password: string = "";
+
+  ErrorLogin : string = "";
+  ErrorPassword : string = "";
+  ErrorSingIn : string = "";
+
   SingIn(){
-      this.heroService.SingIn("1","1234").subscribe((res : any) => this.userDataService.Author.next(res.author))
-                                                      //Почему если any всё работает а если object нет
-      this.router.navigate(['HomePage']);
+    this.ErrorSingIn = "";
+
+    this.Login ? this.ErrorLogin = "" : this.ErrorLogin = "Login field can`t be empty";
+
+    this.Password ? this.ErrorPassword = "" : this.ErrorPassword = "Password filed can`t be empty" 
+    
+    if(this.ErrorLogin || this.ErrorPassword) return;  
+
+      this.heroService.SingIn(this.Login, this.Password).subscribe((res : any) => {
+        if(!res){
+            this.ErrorSingIn = "Incorrect password or login";
+            
+        }
+        else{
+          this.userDataService.Author.next(res.author);
+          this.router.navigate([`HomePage`]);
+        }
+      })                                                          
   }
 
   ngOnInit(): void {  

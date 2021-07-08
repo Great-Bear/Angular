@@ -1,6 +1,6 @@
 export class BlogObj{
     id: number | undefined;
-    date: number | undefined;
+    date: number | string |undefined;
     countComents: number | undefined;
     AuthorName: string | undefined;
     text: string | undefined;

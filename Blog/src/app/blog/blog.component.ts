@@ -15,8 +15,8 @@ export class BlogComponent implements OnInit {
 
   Img : string | undefined;
   BlogObj : BlogObj = new BlogObj();
+  isDeletePage : boolean = false;
 
- 
   constructor( private activateRoute: ActivatedRoute,
                private router: Router,
                private httpService: HeroService,
@@ -24,10 +24,14 @@ export class BlogComponent implements OnInit {
                private sanitizer: DomSanitizer) 
   {
     activateRoute.params.subscribe(params => this.BlogObj.name = params['name']);
-  //this.getImage('https://localhost:44346/Blog/fileName/2').subscribe(x => this.url = x)
+    this.isDeletePage = (Boolean)(this.router.url.includes("Delete"));
   }
   public url : SafeResourceUrl | undefined;
-  
+  DeleteBlog(){
+   this.httpService.deleteBlog(this.BlogObj.id).subscribe(res => { if(res == null){
+     this.router.navigate(["HomePage"]);
+   }});
+  }
   ngOnInit(): void {
     if(this.BlogObj.name == ":name"){
       this.router.navigate(['ListBlogs']);
@@ -36,8 +40,8 @@ export class BlogComponent implements OnInit {
        this.httpService.getData(this.BlogObj.name).toPromise().then(
          data => {
            if(data instanceof Array){
-              this.BlogObj = data[0];  
-              console.log(data[0]);           
+              this.BlogObj = data[0];    
+              this.BlogObj.AuthorName = data[0].authorName;      
            }         
            if(this.BlogObj.namePicture != undefined) {
               this.httpService.getPicture(this.BlogObj.namePicture).subscribe((pictureArrBuff : any) => {
@@ -47,15 +51,9 @@ export class BlogComponent implements OnInit {
            }         
          },
          error => {
-
+                alert("Error server");
          }
        )
-       // const urlToBlob = window.URL.createObjectURL(f) // get a URL for the blob
-        
-         //   let u =  this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); // tell Anuglar to trust this value
-           
-       // this.url = u;
     }
-  
   }
 }

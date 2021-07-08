@@ -1,3 +1,10 @@
+
+<div *ngIf="isDeletePage">
+    <span>Are real want delete this blog?</span>
+    <br/>
+    <button (click)="DeleteBlog()">Delete</button>
+</div>
+
 <div id="Blog">
     <h1>{{BlogObj.name}}</h1>
     <div id="EmojiBlock">

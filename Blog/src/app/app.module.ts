@@ -16,6 +16,8 @@ import { SearchBlogComponent } from './search-blog/search-blog.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SingOutComponent } from './sing-out/sing-out.component';
 import { NewBlogComponent } from './new-blog/new-blog.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { SingUpComponent } from './sing-up/sing-up.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { NewBlogComponent } from './new-blog/new-blog.component';
     HomePageComponent,
     SingOutComponent,
     NewBlogComponent,
+    EditBlogComponent,
+    SingUpComponent,
   ],
   imports: [
     BrowserModule,

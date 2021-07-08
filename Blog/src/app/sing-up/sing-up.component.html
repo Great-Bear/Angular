@@ -1,0 +1,19 @@
+<h2>Sing-up</h2>
+<span class="ErrorMessage">{{ErrorSingUp}}</span>
+<br>
+
+<label for="Login">Enter login</label> <span class="ErrorMessage"> {{ErrorLogin}}</span>
+<br>
+<input type="text" [(ngModel)]="Login">
+<br>
+
+<label for="Password">Enter password</label> <span class="ErrorMessage"> {{ErrorPassword}}</span>
+<br>
+<input type="password" [(ngModel)]="Password">
+<br>
+
+<label for="Name">Enter Name</label> <span class="ErrorMessage"> {{ErrorName}}</span>
+<br>
+<input type="text" [(ngModel)]="Name">
+<br>
+<button (click)="SingUp()">Sing Up</button>
