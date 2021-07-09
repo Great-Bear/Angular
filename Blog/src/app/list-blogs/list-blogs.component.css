@@ -13,6 +13,8 @@ li /*Как убрать маркера только в блоке BlogList */
   border: 1px solid black;
   margin-top: 10px;
   padding: 10px;
+  margin-left: 15%;
+  width: 70%;
 }
 .ImgBlogs
 {

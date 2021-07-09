@@ -18,16 +18,21 @@ export class ListBlogsComponent implements OnInit {
   onChanged(blogs: any){
     this.ListBlogs = blogs;
 
+    if(this.isHomePage = (Boolean)(this.router.url.includes("HomePage"))){
+
+    
     let newArray = new Array();
     if(this.ListBlogs instanceof Array){   
       for(let i = 0; i < this.ListBlogs.length; i++){
         console.log(this.userDataSevice.Author.getValue())
         if(this.ListBlogs[i].authorName == this.userDataSevice.Author.getValue()){
-            newArray.push(this.ListBlogs[i]);
+          newArray.push(this.ListBlogs[i]);
           this.ListBlogs = newArray;
+          console.log(newArray)
         }
       }
     }
+  }
   }
 
   onChangedImg(imgBlogs : any){

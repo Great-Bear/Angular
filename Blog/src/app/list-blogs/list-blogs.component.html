@@ -16,6 +16,7 @@
                  <p>Edit</p>
              </div>        
         </div>     
+        <p>{{blog.name}}</p>
        <img class="ImgBlogs" [src]="ImgsBlogs.get(blog.id)"/>
        <p>{{blog.text | slice: 0: 100}}</p>
        <button><a [routerLink]="['Blog', blog.name]">Reade More</a></button>
