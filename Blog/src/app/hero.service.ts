@@ -14,35 +14,31 @@ export class HeroService {
       
   SingIn(login: string, password: string){
     let body = {
-      Login:"1",
-      Password: "1234"
+      Login: login,
+      Password: password
     }
     return this.http.post("https://localhost:44346/Blog/", body);   
   }
-
+  getBlogById(id: number | undefined){   
+    return this.http.get(`https://localhost:44346/BlogOperation/${id}`);
+  }
+  getEditBlog(blog: any){
+    return this.http.post(`https://localhost:44346/BlogOperation/`, blog)
+  }
+  CreateBlog(blog: any){
+    return this.http.post(`https://localhost:44346/BlogOperation/Create/1`, blog);
+  }
+  CreateNewAuthor(author : any){
+    return this.http.post(`https://localhost:44346/Account/`,author,{ responseType : "text" });
+  }
   getData(nameBlog : string = ""){
     return this.http.get(`https://localhost:44346/Blog/${nameBlog}`, {responseType: 'json'})
   }
   getPicture (namePicture : string) {
     return this.http.get(`https://localhost:44346/Blog/${namePicture}/2`,{ responseType: 'blob' })
-
-  /* let q = new Observable<SafeResourceUrl>();
-
-  let pictureArrBuff = this.http.get(`https://localhost:44346/Blog/fileName/2`,{ responseType: 'blob' }).
-  toPromise().then
-    (
-    data => {
-      console.log("ok")
-      const urlToBlob = window.URL.createObjectURL(data)   
-      let u = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);     
-      let a = new Observable<SafeResourceUrl>(subscrime => subscrime.next(u)) ;
-      q = a;
-    },
-    error => {
-      console.log('Error: ', error);
-    }).then();
-       
-    }  */ 
+  }
+  deleteBlog(id:number | undefined){
+    return this.http.delete(`https://localhost:44346/BlogOperation/${id}`);
   }
 
 }

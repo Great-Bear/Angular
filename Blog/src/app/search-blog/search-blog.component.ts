@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UserDataSevice } from '../user-data-sevice.service';
+
 @Component({
   selector: 'app-search-blog',
   templateUrl: './search-blog.component.html',
@@ -23,8 +25,9 @@ export class SearchBlogComponent implements OnInit {
     this.onChangedImg.emit(increased);
   }
   
-  constructor(private httpService: HeroService,private sanitizer: DomSanitizer) 
+  constructor(private httpService: HeroService,private sanitizer: DomSanitizer,private userData : UserDataSevice) 
   {
+    userData.Author.getValue();
   }
 
   ShowAllBlogs(){
