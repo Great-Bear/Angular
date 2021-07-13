@@ -1,0 +1,13 @@
+<h2>Edit Blog</h2>
+
+<label for="file">File</label>
+<input type="file" (change)="addPhoto($event)" id="fileFiled">
+<button >Send</button>
+
+<label for="NameBlog">Name Blog:</label><br/>
+<input name="NameBlog" [(ngModel)]="blogObj.name"> 
+<br/>
+<label for="text" name="text">Text:</label><br/>
+<textarea name="text" cols="30" rows="10" [(ngModel)]="blogObj.text"></textarea>
+<br/>
+<button (click)="CreateBlog()">Create Blog</button>

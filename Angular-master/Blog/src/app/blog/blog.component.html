@@ -1,0 +1,27 @@
+
+<div *ngIf="isDeletePage">
+    <span>Are real want delete this blog?</span>
+    <br/>
+    <button (click)="DeleteBlog()">Delete</button>
+</div>
+
+<div id="Blog">
+    <h1>{{BlogObj.name}}</h1>
+    <div id="EmojiBlock">
+        <div>
+            <p>📆 {{BlogObj.date | date}}</p> 
+        </div> 
+        <div>
+            <p>✎ {{BlogObj.AuthorName}}</p>  
+        </div>
+        <div>
+            <p>💬 {{BlogObj.countComents}}</p>  
+         </div>     
+    </div>  
+    <div id="ContentBlock">
+        <img id="MainPicture" [src]="url"/>    
+        <p id="ContectText">{{BlogObj.text}}</p>
+    </div>
+</div>
+
+

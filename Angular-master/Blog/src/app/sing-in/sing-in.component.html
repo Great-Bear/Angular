@@ -1,0 +1,15 @@
+<h2>Sing In</h2>
+<span class="ErrorMessage">{{ErrorSingIn}}</span>
+<br>
+<label for="Login">Enter Email</label> <span class="ErrorMessage" > {{ErrorLogin}}</span>
+<br/>
+<input type="text" name="Login" [(ngModel)]="Login">
+<br>
+<label for="Password">Enter password</label><span class="ErrorMessage" > {{ErrorPassword}}</span>
+<br/>
+<input type="password" [(ngModel)]="Password">
+<br>
+<button (click)="SingIn()">Sing In</button>
+
+
+

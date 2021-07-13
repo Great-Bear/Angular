@@ -1,0 +1,29 @@
+#Blog
+{
+    background-color: rgb(255, 255, 255);  
+}
+#EmojiBlock
+{
+  display: flex;
+  flex-direction: row;
+}
+#EmojiBlock div
+{
+    margin-right: 15px;
+}
+#MainPicture
+{
+    width: 400px;
+    height: 275;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+#ContectText
+{
+    margin-top: 0px;
+}
+#ContentBlock
+{
+    min-height: 275px;
+}

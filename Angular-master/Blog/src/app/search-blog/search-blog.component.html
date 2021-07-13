@@ -1,0 +1,8 @@
+<div id="SearchBlock">
+    <label for="SearchInp">Enter name blog for search</label>
+    <label class="ErrMessage">{{ErrorSearch}}</label>
+    <br/>
+    <input type="text" [(ngModel)]="valueSearch" placeholder="name"/>
+    <button (click)="SearchBlog()">Seacrh</button>
+    <button (click)="ShowAllBlogs()">Show all blogs</button>
+</div>

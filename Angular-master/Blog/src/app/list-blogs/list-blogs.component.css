@@ -1,0 +1,38 @@
+ul
+{
+ padding-left: 0px;
+ margin-left: 170px;
+ margin-right: 170px;
+}
+li /*Как убрать маркера только в блоке BlogList */
+{
+  list-style-type: none;
+}
+.Blogitem
+{
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+  width: 70%;
+  margin-left: 15%;
+}
+.ImgBlogs
+{
+  width: 100%;
+  height: 450px;
+  background-color: rgb(199, 184, 184);
+}
+#SearchBlock
+{
+  margin-left: 170px;
+  margin-right: 170px;
+}
+#EmojiBlock
+{
+  display: flex;
+  flex-direction: row;
+}
+#EmojiBlock div
+{
+    margin-right: 15px;
+}
